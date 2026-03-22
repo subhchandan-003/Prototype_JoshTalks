@@ -7,6 +7,25 @@
     <title>gramlens</title>
     <script type="module" crossorigin src="/assets/index-DmjDw-b_.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-D51q9LBQ.css">
+    <style>
+      /* Viewport-fit: restrict phone frame to viewport height */
+      html, body { height: 100%; overflow: hidden; }
+      .min-h-\[844px\] {
+        min-height: min(844px, calc(100dvh - 2rem)) !important;
+        max-height: calc(100dvh - 2rem);
+      }
+      /* Ensure scrollable inner content stays within frame */
+      .min-h-\[844px\] > .flex-col.flex-1 {
+        overflow-y: auto;
+        min-height: 0;
+      }
+      /* Login/splash screen: fit viewport without scroll */
+      #root > .min-h-screen {
+        min-height: 100dvh !important;
+        max-height: 100dvh;
+        overflow: hidden;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
